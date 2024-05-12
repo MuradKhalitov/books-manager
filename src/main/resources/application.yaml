@@ -1,0 +1,24 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+  datasource:
+    url: jdbc:mysql://localhost:3308/bookdb
+    username: root
+    password: root
+    hikari:
+      schema: bookdb
+      connection-ini-sql: CREATE SCHEMA IF NOT EXISTS bookdb
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+        show-sql: true
+        format_sql: true
+app:
+  redis:
+    enable: true
